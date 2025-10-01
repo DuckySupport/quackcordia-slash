@@ -9,6 +9,7 @@ function ApplicationCommand:__init(data, parent)
 	Snowflake.__init(self, data, parent)
 
 	self._type = data.type
+	self._id = data.id
 	self._application_id = data.application_id
 	self._name = data.name
 	self._description = data.description
@@ -57,6 +58,10 @@ local types = {
 
 function get:printableType()
 	return types[self._type]
+end
+
+function get:id()
+	return self._id
 end
 
 function get:application_id()
